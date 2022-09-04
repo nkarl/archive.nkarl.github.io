@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches: [public]
 
 
 jobs:
@@ -13,7 +13,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14.x]
+        node-version: [18.x]
 
 
     steps:
@@ -24,17 +24,18 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Install packages
+      - name: Install Dependencies
         run: yarn install
 
-      - name: Build project
+      - name: Build Project
         run: yarn run build
 
-      - name: Export static files
+      - name: Export Static Files
         run: yarn run export
 
       - name: Add .nojekyll file
         run: touch ./out/.nojekyll
+
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.1
         with:
