@@ -44,10 +44,10 @@ function Body() {
       </p>
 
       <div className={styles.grid}>
-        {Object.keys(resources).map(key => (
-          <a href={resources[key][0]} className={styles.card}>
+        {Object.entries(resources).map(([key, [link, desc]]) => (
+          <a href={link} className={styles.card}>
             <h2>{key} {'\u2192'}</h2>
-            <p>{resources[key][1]}</p>
+            <p>{desc}</p>
           </a>
         ))}
       </div>
