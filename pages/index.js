@@ -12,9 +12,23 @@ function Header() {
   );
 }
 
-function Body() {
-  const resources = require("./resources.json");
+const data = require("./resources.json");
 
+function OptionCard(k) {
+  let key = k.list, link = data[key]['link'], desc = data[key]['desc']
+  return (
+    <a href={link} className={styles.card}>
+      <h2>
+        {key} {"\u2192"}
+      </h2>
+      <p>{desc}</p>
+    </a>
+  );
+}
+
+function Body() {
+  const keys = Object.keys(data);
+  console.log(keys);
   return (
     <main className={styles.main}>
       <h1 className={styles.title}>
@@ -25,13 +39,8 @@ function Body() {
         <a href="./pages/newIndex.js">pages/newIndex.js</a>
       </p>
       <div className={styles.grid}>
-        {Object.entries(resources).map(([key, [link, desc]]) => (
-          <a href={link} className={styles.card}>
-            <h2>
-              {key} {"\u2192"}
-            </h2>
-            <p>{desc}</p>
-          </a>
+        {keys.map((key) => (
+          <OptionCard list={key}/>
         ))}
       </div>
     </main>

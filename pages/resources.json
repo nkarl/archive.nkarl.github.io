@@ -1,18 +1,18 @@
 {
-  "Documentation": [
-    "https://nextjs.org/docs",
-    "Find in-depth information about Next.js features and API."
-  ],
-  "Learn": [
-    "https://nextjs.org/learn",
-    "Learn about Next.js in an interactive course with quizzes!"
-  ],
-  "Example": [
-    "https://github.com/vercel/next.js/tree/canary/examples",
-    "Discover and deploy boilerplate example Next.js projects."
-  ],
-  "Deploy": [
-    "https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app",
-    "Instantly deploy your Next.js site to a public URL with Vercel."
-  ]
+  "Documentation": {
+    "link": "https://nextjs.org/docs",
+    "desc": "Find in-depth information about Next.js features and API."
+  },
+  "Learn": {
+    "link": "https://nextjs.org/learn",
+    "desc": "Learn about Next.js in an interactive course with quizzes!"
+  },
+  "Example": {
+    "link": "https://github.com/vercel/next.js/tree/canary/examples",
+    "desc": "Discover and deploy boilerplate example Next.js projects."
+  },
+  "Deploy": {
+    "link": "https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app",
+    "desc": "Instantly deploy your Next.js site to a public URL with Vercel."
+  }
 }
