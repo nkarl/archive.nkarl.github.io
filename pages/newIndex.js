@@ -22,7 +22,7 @@ function Body() {
       </h1>
       <p className={styles.description}>
         Get started by editing{" "}
-        <a href="./pages/newIndex.js">pages/newIndex.js</a>
+        <code className={styles.code}>pages/index.js</code>
       </p>
       <div className={styles.grid}>
         {Object.entries(resources).map(([key, [link, desc]]) => (
@@ -55,7 +55,7 @@ function Footer() {
   );
 }
 
-export default function Home() {
+export default function NewHome() {
   return (
     <div className={styles.container}>
       <Header />
