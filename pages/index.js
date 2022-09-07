@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
+import Link from "next/link";
 
 function Header() {
   return (
@@ -14,20 +15,27 @@ function Header() {
 
 const vercel = require("./resources.json");
 
-function OptionCard(item) {
-  const entry = item.list
-  return (
-    <a href={entry.link} className={styles.card}>
-      <h2>
-        {entry.type} {"\u2192"}
-      </h2>
-      <p>{entry.desc}</p>
-    </a>
-  );
-}
+//function OptionCard(item) {
+  //const entry = item.list;
+  //return (
+    //<a href={entry.link} className={styles.card}>
+      //<h2>
+        //{entry.type} {"\u2192"}
+      //</h2>
+      //<p>{entry.desc}</p>
+    //</a>
+  //);
+//}
 
 function Body() {
-  const data = vercel.resources
+  const data = vercel.resources;
+  //console.log(data)
+  data.map(entry => {
+    console.log("item:");
+    console.log(entry.type);
+    console.log(entry.link);
+    console.log(entry.desc);
+  })
   return (
     <main className={styles.main}>
       <h1 className={styles.title}>
@@ -39,7 +47,12 @@ function Body() {
       </p>
       <div className={styles.grid}>
         {data.map((entry) => (
-          <OptionCard list={entry}/>
+          <a key={entry.link} href={entry.link} className={styles.card}>
+            <h2>
+              {entry.type} {"\u2192"}
+            </h2>
+            <p>{entry.desc}</p>
+          </a>
         ))}
       </div>
     </main>
