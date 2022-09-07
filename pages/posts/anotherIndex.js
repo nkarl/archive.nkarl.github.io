@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
-import styles from "../styles/Home.module.css";
+import styles from "../../styles/Home.module.css";
 import Link from "next/link";
 
 function Header() {
@@ -13,7 +13,7 @@ function Header() {
   );
 }
 
-const vercel = require("./resources.json");
+const vercel = require("../resources.json");
 
 function OptionCard(item) {
   const entry = item.list;
@@ -35,8 +35,8 @@ function Body() {
         Welcome to <a href="https://nextjs.org">Next.js!</a>
       </h1>
       <p className={styles.description}>
-        Go to {" "}
-        <Link href="/newIndex">/newIndex!</Link>
+        Go Back To{" "}
+        <Link href="/">/index.js!</Link>
       </p>
       <div className={styles.grid}>
         {data.map((entry) => (
@@ -64,7 +64,7 @@ function Footer() {
   );
 }
 
-export default function Home() {
+export default function NewHome() {
   return (
     <div className={styles.container}>
       <Header />

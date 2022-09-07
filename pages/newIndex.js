@@ -35,8 +35,8 @@ function Body() {
         Welcome to <a href="https://nextjs.org">Next.js!</a>
       </h1>
       <p className={styles.description}>
-        Go to {" "}
-        <Link href="/newIndex">/newIndex!</Link>
+        Go Deeper To{" "}
+        <Link href="/posts/anotherIndex">/posts/anotherIndex.js!</Link>
       </p>
       <div className={styles.grid}>
         {data.map((entry) => (
@@ -64,7 +64,7 @@ function Footer() {
   );
 }
 
-export default function Home() {
+export default function NewHome() {
   return (
     <div className={styles.container}>
       <Header />
