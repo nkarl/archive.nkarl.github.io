@@ -12,23 +12,22 @@ function Header() {
   );
 }
 
-const data = require("./resources.json");
+const vercel = require("./resources.json");
 
-function OptionCard(k) {
-  let key = k.list, link = data[key]['link'], desc = data[key]['desc']
+function OptionCard(item) {
+  const entry = item.list
   return (
-    <a href={link} className={styles.card}>
+    <a href={entry.link} className={styles.card}>
       <h2>
-        {key} {"\u2192"}
+        {entry.type} {"\u2192"}
       </h2>
-      <p>{desc}</p>
+      <p>{entry.desc}</p>
     </a>
   );
 }
 
 function Body() {
-  const keys = Object.keys(data);
-  console.log(keys);
+  const data = vercel.resources
   return (
     <main className={styles.main}>
       <h1 className={styles.title}>
@@ -39,8 +38,8 @@ function Body() {
         <a href="./pages/newIndex.js">pages/newIndex.js</a>
       </p>
       <div className={styles.grid}>
-        {keys.map((key) => (
-          <OptionCard list={key}/>
+        {data.map((entry) => (
+          <OptionCard list={entry}/>
         ))}
       </div>
     </main>
