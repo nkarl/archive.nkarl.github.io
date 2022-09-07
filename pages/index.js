@@ -27,18 +27,6 @@ function OptionCard(item) {
   );
 }
 
-//function OptionCard(item) {
-  //const entry = item.list;
-  //return (
-    //<a href={entry.link} className={styles.card}>
-      //<h2>
-        //{entry.type} {"\u2192"}
-      //</h2>
-      //<p>{entry.desc}</p>
-    //</a>
-  //);
-//}
-
 function Body() {
   const data = vercel.resources;
   return (
@@ -52,19 +40,12 @@ function Body() {
       </p>
       <div className={styles.grid}>
         {data.map((entry) => (
-          <OptionCard key={entry.list} list={entry}/>
+          <OptionCard key={entry.list} list={entry} />
         ))}
       </div>
     </main>
   );
 }
-
-          //<a key={entry.link} href={entry.link} className={styles.card}>
-            //<h2>
-              //{entry.type} {"\u2192"}
-            //</h2>
-            //<p>{entry.desc}</p>
-          //</a>
 
 function Footer() {
   return (
