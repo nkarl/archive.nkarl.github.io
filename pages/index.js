@@ -36,11 +36,11 @@ function Body() {
       </h1>
       <p className={styles.description}>
         Go to {" "}
-        <Link href="/newIndex">/newIndex!</Link>
+        <Link href="/clonedIndex">/clonedIndex.js!</Link>
       </p>
       <div className={styles.grid}>
         {data.map((entry) => (
-          <OptionCard key={entry.list} list={entry} />
+          <OptionCard key={entry.link} list={entry} />
         ))}
       </div>
     </main>
